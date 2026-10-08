@@ -28,6 +28,7 @@ jobs:
       #   Scan dependencies:      run: pip install pip-audit && pip-audit -r requirements.txt
       # THINK: where in the order should it go? Before training, or at the very end?
       # before, to scan code before trianin to prevent code crashes at trainin stage
+      - name: Scan code for bugs 
         run: pip install bandit && bandit -r app.py train.py
 
       # TODO 7a: run the training script (it also enforces your quality gate).
